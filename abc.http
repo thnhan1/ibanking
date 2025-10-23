@@ -1,0 +1,32 @@
+POST http://localhost:8080/api/v1/auth/login
+Content-Type:application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+### GET request to example server
+GET http://localhost:8080/api/v1/tuituion/512H0507?term=2025-1
+Authorization:"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2MTI1NDkzNiwiZXhwIjoxNzYxMjU4NTM2fQ.regBFJilq-hLRpmRG5Tey5FOutRKMnNXxt9UeFsgocY"
+
+###
+POST http://localhost:8080/api/v1/payments/session
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2MTI1NzcwNywiZXhwIjoxNzYxMjYxMzA3fQ.Jz4U949jU6n2YyCiW1XGzh12Akf6CAnjxAPAVv_uvbs
+
+{"studentId": "512H0507",
+  "term": "2025-1",
+  "amount": 1000,
+  "idempotencyKey": "5e9d7c12-3b6d-4c3f-b8d1-9f4a8a6be8ce"
+  }
+
+### confirm
+POST http://localhost:8080/api/v1/payments/confirm
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc2MTI1ODA0MywiZXhwIjoxNzYxMjYxNjQzfQ.wCU-PcDnhGS0OHavKd0KMd8H91Fw1y8u1xAu71ZkUWE
+
+{
+  "otp": "002409",
+  "txId": "0ab66581-b441-4565-84b9-d654d8824c5d"
+}
