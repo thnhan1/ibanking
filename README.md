@@ -28,6 +28,9 @@
 
 The iBanking API is a Spring Boot application designed specifically for processing tuition payments at Ton Duc Thang University (TDTU). It provides a secure and reliable platform for students to pay their tuition fees with OTP verification, robust authentication, and comprehensive transaction tracking.
 
+## System Diagram
+![alt](./diagram.png)
+
 ## Features
 
 - 🔐 **JWT Authentication** - Secure token-based authentication system
